@@ -15,6 +15,8 @@ RUN mkdir /cvmfs/config-osg.opensciencegrid.org && \
     mkdir /cvmfs/singularity.opensciencegrid.org && \
     mkdir /cvmfs/ligo.osgstorage.org
 
+RUN sed -i 's/#[[:space:]]*user_allow_other/user_allow_other/' /etc/fuse.conf
+
 RUN apt-get update && \
     apt-get install --assume-yes \
       emacs-nox \
