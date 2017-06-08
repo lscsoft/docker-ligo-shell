@@ -1,4 +1,4 @@
-FROM ligo/software:jessie-proposed
+FROM ligo/software:jessie
 
 LABEL name="LIGO Software Environment for Debian Jessie with user shell" \
       maintainer="Adam Mercer <adam.mercer@ligo.org>" \
