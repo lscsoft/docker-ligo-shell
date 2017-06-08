@@ -6,8 +6,18 @@ LABEL name="LIGO Software Environment for Debian Jessie with user shell" \
       support="Reference Platform"
 
 COPY /environment/bash/ligo.sh /etc/profile.d/ligo.sh
+COPY /environment/sudoers.d/albert /etc/sudoers.d/albert
+COPY /entrypoint/startup /usr/local/bin/startup
+
+RUN apt-get update && \
+    apt-get install --assume-yes \
+      emacs-nox \
+      sudo \
+      vim && \
+    rm -rf /var/lib/apt/lists/*
 
 RUN useradd -ms /bin/bash albert
 USER albert
 WORKDIR /home/albert
+#ENTRYPOINT /usr/local/bin/startup
 CMD /bin/bash -l
