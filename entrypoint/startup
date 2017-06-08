@@ -1,0 +1,4 @@
+#!/bin/sh
+
+sudo sh -c 'mount -a 1>2 2>/dev/null'
+exec "$@"
