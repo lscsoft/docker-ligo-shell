@@ -1,4 +1,4 @@
 #!/bin/sh
 
-sudo sh -c 'mount -a 1>2 2>/dev/null'
+sudo sh -c 'mount -a 2>&1 >/dev/null'
 exec "$@"
