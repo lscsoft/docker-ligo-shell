@@ -16,7 +16,6 @@ RUN apt-get update && \
       cvmfs-x509-helper \
       emacs-nox \
       ldg-client \
-      singularity-container \
       sudo \
       vim && \
     rm -rf /var/lib/apt/lists/*
