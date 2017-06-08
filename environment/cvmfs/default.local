@@ -1,0 +1,20 @@
+# /etc/cvmfs/default.local
+#
+# This is the CVMFS-wide configuration file.  It is SAFE to edit
+#
+
+
+# The size limit, in MB, of the CVMFS local disk cache.
+# 20GB is the recommended value; we strongly suggest setting this below 10GB.
+CVMFS_QUOTA_LIMIT=20000
+
+# This turns off the local HTTP proxy by default.
+#
+# This is appropriate for an individual laptop or workstation.
+#
+# THIS IS NOT AN APPROPRIATE SETTING FOR A CLUSTER.
+#
+# We strongly recommend finding a local HTTP caching proxy if you will use
+# CVMFS across multiple hosts at your site.
+#
+CVMFS_HTTP_PROXY="DIRECT"
