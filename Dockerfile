@@ -23,12 +23,13 @@ RUN apt-get update && \
 RUN mkdir /cvmfs/config-osg.opensciencegrid.org && \
     mkdir /cvmfs/oasis.opensciencegrid.org && \
     mkdir /cvmfs/singularity.opensciencegrid.org && \
-    mkdir /cvmfs/ligo.osgstorage.org
+    mkdir /cvmfs/ligo.osgstorage.org && \
+    mkdir /container
 
 RUN sed -i 's/#[[:space:]]*user_allow_other/user_allow_other/' /etc/fuse.conf
 
-RUN useradd -ms /bin/bash albert
+RUN useradd -m -d /container/albert -s /bin/bash albert
 USER albert
-WORKDIR /home/albert
+WORKDIR /container/albert
 ENTRYPOINT [ "/usr/local/bin/startup" ]
 CMD ["/bin/bash", "-l" ]
