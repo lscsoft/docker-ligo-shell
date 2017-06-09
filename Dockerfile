@@ -22,10 +22,11 @@ COPY /entrypoint/startup /usr/local/bin/startup
 RUN mkdir -p /cvmfs/config-osg.opensciencegrid.org && \
     mkdir /cvmfs/oasis.opensciencegrid.org && \
     mkdir /cvmfs/singularity.opensciencegrid.org && \
-    mkdir /cvmfs/ligo.osgstorage.org
+    mkdir /cvmfs/ligo.osgstorage.org && \
+    mkdir /container
 
-RUN useradd -ms /bin/bash albert
+RUN useradd -m -d /container/albert -s /bin/bash albert
 USER albert
-WORKDIR /home/albert
+WORKDIR /container/albert
 ENTRYPOINT [ "/usr/local/bin/startup" ]
 CMD ["/bin/bash", "-l" ]
