@@ -25,11 +25,11 @@ COPY /entrypoint/startup /usr/local/bin/startup
 #    mkdir /cvmfs/oasis.opensciencegrid.org && \
 #    mkdir /cvmfs/singularity.opensciencegrid.org && \
 #    mkdir /cvmfs/ligo.osgstorage.org && \
-#    mkdir /container
 #
 #RUN sed -i 's/#[[:space:]]*user_allow_other/user_allow_other/' /etc/fuse.conf
 
-RUN useradd -m -d /container/albert -s /bin/bash albert
+RUN mkdir /container \
+    && useradd -m -d /container/albert -s /bin/bash albert
 USER albert
 WORKDIR /container/albert
 ENTRYPOINT [ "/usr/local/bin/startup" ]
