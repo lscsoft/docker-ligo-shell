@@ -1,6 +1,6 @@
-FROM ligo/software:stretch
+FROM ligo/software:stretch-proposed
 
-LABEL name="LIGO Software Environment for Debian 9 'stretch' with user shell" \
+LABEL name="LIGO Proposed Software Environment on Debian 9 'stretch' with user shell" \
       maintainer="Adam Mercer <adam.mercer@ligo.org>" \
       date="20170616" \
       support="Reference Platform"
