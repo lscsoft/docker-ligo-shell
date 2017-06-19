@@ -10,16 +10,16 @@ COPY /environment/etc/fstab /etc/fstab
 COPY /environment/sudoers.d/albert /etc/sudoers.d/albert
 COPY /entrypoint/startup /usr/local/bin/startup
 
-# Presently LSCsoft stretch is broken
-#RUN apt-get update && \
-#    apt-get install --assume-yes \
+RUN apt-get update \
+    && apt-get install --assume-yes \
+      emacs-nox \
+      sudo \
+      vim \
+    && rm -rf /var/lib/apt/lists/*
+
 #      cvmfs \
 #      cvmfs-x509-helper \
-#      emacs-nox \
 #      ldg-client \
-#      sudo \
-#      vim && \
-#    rm -rf /var/lib/apt/lists/*
 #
 #RUN mkdir /cvmfs/config-osg.opensciencegrid.org && \
 #    mkdir /cvmfs/oasis.opensciencegrid.org && \
