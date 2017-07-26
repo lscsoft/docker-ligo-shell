@@ -1,4 +1,4 @@
-# ligo/software-shell
+# ligo/shell
 
 This container is intended for use as a lightweight virtual machine that
 replicates a LIGO software environment on all operating systems. It includes
@@ -12,5 +12,5 @@ and Travis CI and should be used to construct derivative containers.
 The following command will ensure that user home directories are mounted in
 such a way that the albert user has the same level of access as your account.
 ```
-docker run -it --privileged --restart=unless-stopped -v Users:/Users -v cvmfs:/var/lib/cvmfs ligo/software-shell:jessie
+docker run -it --privileged --restart=unless-stopped -v Users:/Users ligo/shell
 ```
