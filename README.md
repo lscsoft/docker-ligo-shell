@@ -12,5 +12,5 @@ and Travis CI and should be used to construct derivative containers.
 The following command will ensure that user home directories are mounted in
 such a way that the albert user has the same level of access as your account.
 ```
-docker run -it --privileged --restart=unless-stopped -v /Users:/Users ligo/shell:jessie
+docker run -it --privileged --restart=unless-stopped -v Users:/Users ligo/shell
 ```
