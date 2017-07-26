@@ -22,5 +22,5 @@ user_message()
 user_message "--------------------------------------------------------------------------------"
 user_message "Welcome to the LIGO Computing Environment. For support, please raise issues at:"
 user_message ""
-user_message "https://github.com/lscsoft/docker-ligo-software-shell"
+user_message "https://github.com/lscsoft/docker-ligo-shell"
 user_message "--------------------------------------------------------------------------------"
