@@ -16,6 +16,7 @@ RUN apt-get update && \
       cvmfs-x509-helper \
       emacs-nox \
       ldg-client \
+      sshfs \
       sudo \
       vim && \
     rm -rf /var/lib/apt/lists/*
