@@ -1,8 +1,8 @@
 FROM ligo/software:stretch
 
 LABEL name="LIGO Software Environment for Debian 9 'stretch' with user shell" \
-      maintainer="Adam Mercer <adam.mercer@ligo.org>" \
-      date="20170616" \
+      maintainer="Tom Downes <thomas.downes@ligo.org>" \
+      date="2017-11-03" \
       support="Reference Platform"
 
 COPY /environment/bash/ligo.sh /etc/profile.d/ligo.sh
@@ -10,22 +10,24 @@ COPY /environment/etc/fstab /etc/fstab
 COPY /environment/sudoers.d/albert /etc/sudoers.d/albert
 COPY /entrypoint/startup /usr/local/bin/startup
 
-RUN apt-get update \
-    && apt-get install --assume-yes \
+RUN apt-get update && \
+    apt-get install --assume-yes \
+      ldg-client \
       emacs-nox \
       sudo \
-      vim \
-    && rm -rf /var/lib/apt/lists/*
+      vim && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 
 #      cvmfs \
+#      cvmfs-config-osg \
 #      cvmfs-x509-helper \
-#      ldg-client \
-#
+
 #RUN mkdir /cvmfs/config-osg.opensciencegrid.org && \
 #    mkdir /cvmfs/oasis.opensciencegrid.org && \
 #    mkdir /cvmfs/singularity.opensciencegrid.org && \
 #    mkdir /cvmfs/ligo.osgstorage.org && \
-#
+
 #RUN sed -i 's/#[[:space:]]*user_allow_other/user_allow_other/' /etc/fuse.conf
 
 RUN mkdir /container \
