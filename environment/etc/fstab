@@ -1,3 +1,4 @@
 config-osg.opensciencegrid.org  /cvmfs/config-osg.opensciencegrid.org  cvmfs defaults 0 0
 oasis.opensciencegrid.org       /cvmfs/oasis.opensciencegrid.org       cvmfs defaults 0 0
 singularity.opensciencegrid.org /cvmfs/singularity.opensciencegrid.org cvmfs defaults 0 0
+gwosc.osgstorage.org            /cvmfs/gwosc.osgstorage.org            cvmfs defaults 0 0
