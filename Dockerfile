@@ -1,8 +1,8 @@
-FROM ligo/software:stretch
+FROM containers.ligo.org/docker/software:stretch
 
 LABEL name="LIGO Software Environment for Debian 9 'stretch' with user shell" \
-      maintainer="Tom Downes <thomas.downes@ligo.org>" \
-      date="2018-06-08" \
+      maintainer="Shawn Kwang <shawn.kwang@ligo.org>" \
+      date="20190909" \
       support="Reference Platform"
 
 COPY /environment/bash/ligo.sh /etc/profile.d/ligo.sh
