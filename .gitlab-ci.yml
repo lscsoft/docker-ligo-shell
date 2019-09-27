@@ -2,7 +2,7 @@
 image: docker:latest
 
 variables:
-  REPOSITORY: 'igwn/ligo-shell'
+  REPOSITORY: 'igwn/shell'
 
 stages:
   - docker
