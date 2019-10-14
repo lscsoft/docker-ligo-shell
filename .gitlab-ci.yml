@@ -2,7 +2,7 @@
 image: docker:latest
 
 variables:
-  REPOSITORY: 'igwn/shell'
+  SHELL_REPOSITORY: 'igwn/shell'
 
 stages:
   - docker
@@ -18,7 +18,7 @@ docker:build:
         # push to docker hub
         if [[ $CI_PROJECT_NAMESPACE == 'docker' ]]; then
           docker login -u $DOCKER_HUB_USER -p $DOCKER_HUB_TOKEN
-          docker tag $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME $REPOSITORY:$CI_COMMIT_REF_NAME
-          docker push $REPOSITORY:$CI_COMMIT_REF_NAME
+          docker tag $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME $SHELL_REPOSITORY:$CI_COMMIT_REF_NAME
+          docker push $SHELL_REPOSITORY:$CI_COMMIT_REF_NAME
           docker logout
         fi
