@@ -2,13 +2,15 @@ FROM containers.ligo.org/docker/software:stretch
 
 LABEL name="LIGO Software Environment for Debian 9 'stretch' with user shell" \
       maintainer="Shawn Kwang <shawn.kwang@ligo.org>" \
-      date="20190909" \
       support="Reference Platform"
 
 COPY /environment/bash/ligo.sh /etc/profile.d/ligo.sh
 COPY /environment/etc/fstab /etc/fstab
 COPY /environment/sudoers.d/albert /etc/sudoers.d/albert
 COPY /entrypoint/startup /usr/local/bin/startup
+
+# ensure sudoers.d/albert has the correct permissions
+RUN chmod 440 /etc/sudoers.d/albert
 
 RUN apt-get update && \
     apt-get install --assume-yes \
