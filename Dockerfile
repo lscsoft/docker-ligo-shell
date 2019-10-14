@@ -2,7 +2,6 @@ FROM containers.ligo.org/docker/software:el7
 
 LABEL name="LIGO Software Environment for Enterprise Linux 7 with user shell" \
       maintainer="Adam Mercer <adam.mercer@ligo.org>" \
-      date="20170608" \
       support="Reference Platform"
 
 RUN yum -y install \
@@ -18,6 +17,9 @@ COPY /environment/etc/fstab /etc/fstab
 COPY /environment/cvmfs/default.local /etc/cvmfs/default.local
 COPY /environment/sudoers.d/albert /etc/sudoers.d/albert
 COPY /entrypoint/startup /usr/local/bin/startup
+
+# ensure sudoers.d/albert has the correct permissions
+RUN chmod 440 /etc/sudoers.d/albert
 
 RUN mkdir -p /cvmfs/config-osg.opensciencegrid.org && \
     mkdir /cvmfs/oasis.opensciencegrid.org && \
