@@ -1,4 +1,4 @@
-FROM containers.ligo.org/docker/software:stretch
+FROM igwn/software:stretch
 
 LABEL name="LIGO Software Environment for Debian 9 'stretch' with user shell" \
       maintainer="Shawn Kwang <shawn.kwang@ligo.org>" \
