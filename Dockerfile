@@ -1,4 +1,4 @@
-FROM containers.ligo.org/docker/software:el7
+FROM igwn/software:el7
 
 LABEL name="LIGO Software Environment for Enterprise Linux 7 with user shell" \
       maintainer="Adam Mercer <adam.mercer@ligo.org>" \
