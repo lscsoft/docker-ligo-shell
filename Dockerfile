@@ -1,8 +1,8 @@
 FROM igwn/software:stretch
 
-LABEL name="LIGO Software Environment for Debian 9 'stretch' with user shell" \
-      maintainer="Shawn Kwang <shawn.kwang@ligo.org>" \
-      support="Reference Platform"
+LABEL name="LIGO Software Environment for Debian 9 'stretch' with user shell"
+LABEL maintainer="Shawn Kwang <shawn.kwang@ligo.org>"
+LABEL support="Reference Platform"
 
 COPY /environment/bash/ligo.sh /etc/profile.d/ligo.sh
 COPY /environment/etc/fstab /etc/fstab
